@@ -22,8 +22,12 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const product_1 = __importStar(require("./product"));
+const prompt_sync_1 = __importDefault(require("prompt-sync"));
 // new product having Realme added successfully
 const addProductResponse = (0, product_1.addProduct)('Realme', 15000, '64GB', 10, 3.5);
 console.log(addProductResponse);
@@ -55,6 +59,21 @@ const orders = [
     { userName: 'Abhishek', productName: 'OnePlus', quantity: 7 },
     { userName: 'Nagendra', productName: 'Oppo', quantity: 2 }
 ];
+// take order from user using prompt-sync
+const prompt = (0, prompt_sync_1.default)();
+function takeOrder() {
+    const userName = prompt('Enter your name: ');
+    const productName = prompt('Type the product name as iPhone, Samsung, OnePlus, Oppo, Realme or whatever you want: ');
+    const quantity = +prompt('Enter no of product quantity you want to buy : ');
+    try {
+        const createdOrder = createOrder(userName, productName, quantity);
+        placeOrder(createdOrder, userName);
+    }
+    catch (error) {
+        console.error(`Error processing order for user: ${userName}, product: ${productName}, quantity: ${quantity}. ${Error.prototype.toString.call(error)}`);
+    }
+}
+takeOrder();
 //calling createOrder and placeOrder functions to display all order details
 orders.forEach(order => {
     try {

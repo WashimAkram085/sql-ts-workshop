@@ -1,12 +1,4 @@
-//Question : Place order for particular product and display the recipt of that order
-
-interface Product {
-    name: string;
-    price: number;
-    storage: string;
-    quantity: number;
-    rating: number;
-}
+import Product from "../models/Product";
 
 const products: Product[] = [
     {
@@ -39,13 +31,6 @@ const products: Product[] = [
     }
 ];
 
-console.log(products);
-
-export function addProduct(name: string, price: number,storage:string, quantity: number, rating: number) {
-    const newProduct: Product = { name, price, storage, quantity, rating };
-    products.push(newProduct);
-    
-    return `new product having name ${name} added successfully`;
-}
+//console.log(products);
 
 export default products;

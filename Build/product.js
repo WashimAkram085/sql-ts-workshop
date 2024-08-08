@@ -35,6 +35,6 @@ console.log(products);
 function addProduct(name, price, storage, quantity, rating) {
     const newProduct = { name, price, storage, quantity, rating };
     products.push(newProduct);
-    return `new product having ${name} added successfully`;
+    return `new product having name ${name} added successfully`;
 }
 exports.default = products;

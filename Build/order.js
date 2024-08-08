@@ -52,14 +52,14 @@ function createOrder(userName, productName, quantity) {
 function placeOrder(order, userName = 'Guest') {
     console.log(`Order placed by ${userName} for ${order.productName} of quantity ${order.quantity} of price ${order.price}`);
 }
-//Orders created
+//Orders created statically
 const orders = [
     { userName: 'Washim', productName: 'iPhone', quantity: 3 },
     { userName: 'Roshni', productName: 'Samsung', quantity: 5 },
     { userName: 'Abhishek', productName: 'OnePlus', quantity: 7 },
     { userName: 'Nagendra', productName: 'Oppo', quantity: 2 }
 ];
-// take order from user using prompt-sync
+// take order from user using prompt-sync dynamically
 const prompt = (0, prompt_sync_1.default)();
 function takeOrder() {
     const userName = prompt('Enter your name: ');
@@ -70,6 +70,7 @@ function takeOrder() {
         placeOrder(createdOrder, userName);
     }
     catch (error) {
+        //console.log can also be used. console.error is used to display error message in red color
         console.error(`Error processing order for user: ${userName}, product: ${productName}, quantity: ${quantity}. ${Error.prototype.toString.call(error)}`);
     }
 }

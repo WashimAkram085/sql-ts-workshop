@@ -1,3 +1,5 @@
+-- Question : add order in order table for product and write the query in function to return all the order placed in give date range. 
+
 -- product table
 CREATE TABLE IF NOT EXISTS Product (
     product_id SERIAL PRIMARY KEY,
@@ -41,4 +43,5 @@ END;
 $$ LANGUAGE plpgsql;
 
 --calling the function
-SELECT * FROM orders_dateRange('2024-01-01', '2024-01-03');
+SELECT * FROM orders_dateRange('2024-01-01', '2024-01-04');
+

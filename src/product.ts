@@ -1,3 +1,5 @@
+//Question : Place order for particular product and display the recipt of that order
+
 interface Product {
     name: string;
     price: number;
@@ -43,7 +45,7 @@ export function addProduct(name: string, price: number,storage:string, quantity:
     const newProduct: Product = { name, price, storage, quantity, rating };
     products.push(newProduct);
     
-    return `new product having ${name} added successfully`;
+    return `new product having name ${name} added successfully`;
 }
 
 export default products;

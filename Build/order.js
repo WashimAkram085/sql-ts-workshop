@@ -62,6 +62,6 @@ orders.forEach(order => {
         placeOrder(createdOrder, order.userName);
     }
     catch (error) {
-        console.error(Error);
+        console.error(`Error processing order for user: ${order.userName}, product: ${order.productName}, quantity: ${order.quantity}. ${Error.prototype.toString.call(error)}`);
     }
 });
